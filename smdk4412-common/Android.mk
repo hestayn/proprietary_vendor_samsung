@@ -19,4 +19,13 @@ LOCAL_PATH := $(call my-dir)
 
 ifneq ($(filter i9300 i9305 n7100 n8000 n8013 n8020 t0lte t0lteatt t0ltetmo t0ltekor i605 l900 r950 i925 n5100 n5110 n5120,$(TARGET_DEVICE)),)
 
+include $(CLEAR_VARS)
+LOCAL_MODULE := libMali
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_SRC_FILES := proprietary/lib/libMali.so
+LOCAL_MULTILIB := 32
+include $(BUILD_PREBUILT)
+
 endif
